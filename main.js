@@ -1,12 +1,10 @@
 const checkDiskSpace = require('check-disk-space')
 const notifier = require('node-notifier')
 const path = require('path')
-const drives = require('./config')
-
-const intervalInMinutes = 0.2
+const config = require('./config')
 
 const tick = () => {
-  drives.forEach(drive => {
+  config.drives.forEach(drive => {
     checkDiskSpace(drive.rootPath)
       .then((diskSpace) => {
         const percentageFree = diskSpace.free / diskSpace.size * 100
@@ -26,7 +24,7 @@ const tick = () => {
       })
   })
 
-  setTimeout(tick, intervalInMinutes * 60000)
+  setTimeout(tick, config.tickIntervalInMinutes * 60000)
 }
 
 tick()
