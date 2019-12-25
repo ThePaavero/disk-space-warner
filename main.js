@@ -18,7 +18,7 @@ const tick = () => {
         notifier.notify({
           appID: 'what?',
           title: 'DISK SPACE WARNING',
-          message: `Drive "${drive.title}" is starting to fill up\n(under ${drive.warningThresholdInPercentage} %)!`,
+          message: `Drive "${drive.title}" is starting to fill up.\nUnder ${drive.warningThresholdInPercentage} % remaining.`,
           icon: path.join(__dirname, '/alert-icon.png'),
         })
       })
