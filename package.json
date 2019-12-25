@@ -1,15 +1,16 @@
 {
   "name": "disk-space-warner",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Keeps an eye on your disk space situation",
+  "repository": "github:ThePaavero/disk-space-warner",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "check-disk-space": "^2.1.0",
-    "node-notifier": "^6.0.0"
+    "check-disk-space": "2.1.0",
+    "node-notifier": "6.0.0"
   }
 }
