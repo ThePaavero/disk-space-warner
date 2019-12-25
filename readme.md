@@ -9,6 +9,7 @@
 - When the program notices that one or more of your drives have less free space it will create an alert
 
 ## Notes
+- This "problem" has probably been solved in much better ways. I just wanted to create something. :)
 - Tested on Windows only
 - This library does all the tedious work, it's great: https://github.com/Alex-D/check-disk-space
 - This library handles the alert part: https://github.com/mikaelbr/node-notifier
