@@ -1,4 +1,7 @@
 const checkDiskSpace = require('check-disk-space')
+const notifier = require('node-notifier')
+
+const intervalInMinutes = 1
 
 const drives = [
   {
@@ -18,17 +21,26 @@ const drives = [
   }
 ]
 
-drives.forEach(drive => {
-  checkDiskSpace(drive.rootPath)
-    .then((diskSpace) => {
-      const percentageFree = diskSpace.free / diskSpace.size * 100
-      console.log(`Drive "${diskSpace.diskPath}" > ${percentageFree}% FREE`)
-      if (percentageFree > drive.warningThresholdInPercentage) {
-        // We're good.
-        return
-      }
-      
-      // We're not good. Alert.
-      console.log('LOL ALERT')
-    })
-})
+const tick = () => {
+  drives.forEach(drive => {
+    checkDiskSpace(drive.rootPath)
+      .then((diskSpace) => {
+        const percentageFree = diskSpace.free / diskSpace.size * 100
+        console.log(`Drive "${diskSpace.diskPath}" > ${percentageFree}% FREE`)
+        if (percentageFree > drive.warningThresholdInPercentage) {
+          // We're good.
+          return
+        }
+        // We're not good. Alert.
+        console.log('Not enough free space. Alerting user.')
+        notifier.notify({
+          title: 'DISK SPACE WARNING',
+          message: `Drive "${drive.title}" is starting to fill up (under ${drive.warningThresholdInPercentage} %)!`,
+        })
+      })
+  })
+
+  setTimeout(tick, intervalInMinutes * 60000)
+}
+
+tick()
