@@ -23,7 +23,7 @@
 
 - [ ] Add a feature: STFU after one or two notice(s); don't keep nagging every X minutes
 
-## Notes
+## Notes and credits
 - This "problem" has probably been solved in much better ways. I just wanted to create something. :)
 - Tested on Windows only
 - This library does all the tedious work, it's great: https://github.com/Alex-D/check-disk-space
