@@ -23,5 +23,12 @@ drives.forEach(drive => {
     .then((diskSpace) => {
       const percentageFree = diskSpace.free / diskSpace.size * 100
       console.log(`Drive "${diskSpace.diskPath}" > ${percentageFree}% FREE`)
+      if (percentageFree > drive.warningThresholdInPercentage) {
+        // We're good.
+        return
+      }
+      
+      // We're not good. Alert.
+      console.log('LOL ALERT')
     })
 })
