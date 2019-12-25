@@ -1,4 +1,4 @@
-# Keep an eye on your disk space situation
+# Keeps an eye on your disk space situation
 
 ## Installing
 ``
