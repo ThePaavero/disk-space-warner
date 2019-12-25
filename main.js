@@ -1,7 +1,8 @@
 const checkDiskSpace = require('check-disk-space')
 const notifier = require('node-notifier')
+const path = require('path')
 
-const intervalInMinutes = 1
+const intervalInMinutes = 0.2
 
 const drives = [
   {
@@ -35,7 +36,8 @@ const tick = () => {
         console.log('Not enough free space. Alerting user.')
         notifier.notify({
           title: 'DISK SPACE WARNING',
-          message: `Drive "${drive.title}" is starting to fill up (under ${drive.warningThresholdInPercentage} %)!`,
+          message: `Drive "${drive.title}" is starting to fill up\n(under ${drive.warningThresholdInPercentage} %)!`,
+          icon: path.join(__dirname, 'alert-icon.png'),
         })
       })
   })
