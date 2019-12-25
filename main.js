@@ -1,26 +1,9 @@
 const checkDiskSpace = require('check-disk-space')
 const notifier = require('node-notifier')
 const path = require('path')
+const drives = require('./config')
 
 const intervalInMinutes = 0.2
-
-const drives = [
-  {
-    title: 'C',
-    rootPath: '/mnt/c/',
-    warningThresholdInPercentage: 20,
-  },
-  {
-    title: 'D',
-    rootPath: '/mnt/d/',
-    warningThresholdInPercentage: 20,
-  },
-  {
-    title: 'E',
-    rootPath: '/mnt/e/',
-    warningThresholdInPercentage: 20,
-  }
-]
 
 const tick = () => {
   drives.forEach(drive => {
