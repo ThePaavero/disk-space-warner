@@ -22,11 +22,11 @@
 
 
 ## Todo
-[ ] Get a custom icon to work
+ [ ] Get a custom icon to work
 
-[ ] Figure out and write instructions on how to start the application in the background on start up
+ [ ] Figure out and write instructions on how to start the application in the background on start up
 
-[ ] Add a feature: STFU after one or two notice(s); don't keep nagging every X minutes
+ [ ] Add a feature: STFU after one or two notice(s); don't keep nagging every X minutes
 
 ### Example config object
 It's what I use. It runs under WSL, hence the funky directory paths.
