@@ -35,9 +35,10 @@ const tick = () => {
         // We're not good. Alert.
         console.log('Not enough free space. Alerting user.')
         notifier.notify({
+          appID: 'what?',
           title: 'DISK SPACE WARNING',
           message: `Drive "${drive.title}" is starting to fill up\n(under ${drive.warningThresholdInPercentage} %)!`,
-          icon: path.join(__dirname, 'alert-icon.png'),
+          icon: path.join(__dirname, '/alert-icon.png'),
         })
       })
   })
