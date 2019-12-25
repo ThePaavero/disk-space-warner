@@ -1,5 +1,7 @@
 # Keeps an eye on your disk space situation
 
+![Screenshot of alert](https://github.com/ThePaavero/disk-space-warner/blob/master/screenshot.png)
+
 ## Installing
 - `git clone https://github.com/ThePaavero/disk-space-warner.git`
 
